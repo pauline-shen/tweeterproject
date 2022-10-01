@@ -1,12 +1,8 @@
-header {
+.aligner {
   background-color: #F3E5AB;
   background-image: url("../images/asfalt-light.png");
   height: 520px;
-  width: 100vw;
   padding-top: 120px;
-}
-
-.aligner {
   display: flex;
   flex-direction: column;
   align-items: center;

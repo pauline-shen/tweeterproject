@@ -1,9 +1,3 @@
-section {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
 textarea {
   width: 100%;
   background-color: inherit;
@@ -14,6 +8,65 @@ textarea {
   padding: 0 2px;
   border-bottom:solid 5px #545149;
   margin-bottom: 10px;
+}
+
+article.tweet {
+  margin-top: 60px;
+  margin-bottom: 24px;
+  height:max-content;
+  min-height:100%; 
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-top: solid 5px #545149;
+  border-bottom:solid 5px #545149;
+  border-left: solid 5px #545149;
+  border-right: solid 5px #545149;
+}
+
+article.tweet:hover {
+  box-shadow: 10px 5px 5px #9ca8d1;
+}
+
+article.tweet header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 30px;
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+article.tweet article{
+  color: inherit;
+  height: auto;
+  width: 95%;
+  margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-bottom: solid 5px #545149;
+}
+
+article.tweet footer {
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 55%;
+  padding-top: 10px;
+  padding-left: 35px;
+  padding-right: 35px;
+  
+}
+
+.new-tweet {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .submitcount {
@@ -39,4 +92,12 @@ textarea {
 
 .invalid {
   color: #FF0000;
+}
+
+.at-userid {
+  color: #c1c1c1;
+}
+
+.iconoption:hover {
+  color: #c2b23a
 }
