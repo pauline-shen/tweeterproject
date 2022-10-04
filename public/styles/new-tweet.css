@@ -11,7 +11,7 @@ textarea {
 }
 
 article.tweet {
-  margin-top: 60px;
+  margin-top: 40px;
   margin-bottom: 24px;
   height:max-content;
   min-height:100%; 
@@ -100,4 +100,10 @@ article.tweet footer {
 
 .iconoption:hover {
   color: #c2b23a
+}
+
+.profile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
