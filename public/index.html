@@ -28,7 +28,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
     integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  
+
 
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
@@ -61,6 +61,16 @@
     <section class="new-tweet">
       <h2>Compose Tweet</h2>
       <form id="tweet-form" action="/tweets" method="POST">
+        <div class="errorMsg" id="errorEmpty">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          You submitted an empty tweet.
+          <i class="fa-solid fa-triangle-exclamation"></i>
+        </div>
+        <div class="errorMsg" id="errorLong">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          Your tweet is too long. Please limit the length to 140 chars.
+          <i class="fa-solid fa-triangle-exclamation"></i>
+        </div>
         <label for="tweet-text">
           <h3>What are you humming about?</h3>
         </label>

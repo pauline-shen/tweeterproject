@@ -1,48 +1,20 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
+$(document).ready(function() {
 
-// const data = [
-//   {
-//     "user": {
-//       "name": "Newton",
-//       "avatars": "https://i.imgur.com/73hZDYK.png"
-//       ,
-//       "handle": "@SirIsaac"
-//     },
-//     "content": {
-//       "text": "If I have seen further it is by standing on the shoulders of giants"
-//     },
-//     "created_at": 1461116232227
-//   },
-//   {
-//     "user": {
-//       "name": "Descartes",
-//       "avatars": "https://i.imgur.com/nlhLi3I.png",
-//       "handle": "@rd"
-//     },
-//     "content": {
-//       "text": "Je pense , donc je suis"
-//     },
-//     "created_at": 1461113959088
-//   }
-// ]
-
-$(document).ready(function () {
-
-  const escape = function (str) {
+  // escape function to prevent cross-site scripting
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
-
   // returning a tweet <article> element containing the entire HTML structure of the tweet
-  const createTweetElement = function (tweet) {
+  const createTweetElement = function(tweet) {
     let time = timeago.format(tweet.created_at);
+
+    // prevent xss
     const safeHTML = escape(tweet.content.text);
+
+    // generate html structure of tweet article with data
     let $tweet = $(`<article class="tweet">
   <header>
     <div class="profile"><img src="${tweet.user.avatars}" width="50px" height="50px"> &nbsp;${tweet.user.name}</div>
@@ -61,42 +33,49 @@ $(document).ready(function () {
   </footer>
   </article>`);
     return $tweet;
-  }
+  };
 
-  const renderTweets = function (tweets) {
-    // loops through tweets
-    // calls createTweetElement for each tweet
-    // takes return value and appends it to the tweets container
+  // loops through tweets, calls createTweetElement for each tweet and appends it to the tweets container
+  const renderTweets = function(tweets) {
     const $tweetsContainer = $('#tweets-container');
     $tweetsContainer.empty();
     for (let t of tweets) {
       const $tweet = createTweetElement(t);
       $('#tweets-container').prepend($tweet);
     }
-  }
+  };
 
+  // post new tweet upon clicking submition, invalid content/tweet will show alert to user
   const $form = $('#tweet-form');
-  $form.on('submit', function (event) {
+  $form.on('submit', function(event) {
     event.preventDefault();
+    $('#errorEmpty').slideUp(200);
+    $('#errorLong').slideUp(200);
+    
     const serializedData = $(event.target).serialize();
-
-    if (serializedData.length - 5 === 0) {
-      return alert("tweet should not be empty");
-    } else if (serializedData.length - 5 > 140) {
-      return alert("tweet length should not exceed 140 chars");
+    const len = $('#tweet-text').val().length;
+    
+    // display error message when tweet is empty or longer than 140 chars
+    if (len === 0) {
+      return $('#errorEmpty').slideDown(200);
+    } else if (len > 140) {
+      return $('#errorLong').slideDown(200);
     }
 
-    $.post('/tweets', serializedData, response => {
-      console.log(response)
+    // making post request, clear text area
+    $.post('/tweets', serializedData, () => {
       loadTweets();
+      $('#tweet-text').val('');
     });
   });
 
-  const loadTweets = function (tweets) {
-    $.getJSON('/tweets', function (data) {
+  // get tweets from /tweets
+  const loadTweets = function() {
+    $.getJSON('/tweets', function(data) {
       renderTweets(data);
     });
-  }
+  };
 
+  // load tweets on page
   loadTweets();
 });

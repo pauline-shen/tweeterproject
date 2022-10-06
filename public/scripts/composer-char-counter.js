@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
   const tweet = document.getElementById("tweet-text");
   tweet.addEventListener("input", () => {
     const maxLen = 140;
