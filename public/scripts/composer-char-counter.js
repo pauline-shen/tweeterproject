@@ -7,7 +7,7 @@ $(document).ready(function() {
     c.value = maxLen - len;
     if (c.value >= 0) {
       document.getElementById("counter").className = "valid";
-    } else {
+    } else { // changing counter to red
       document.getElementById("counter").className = "invalid";
     }
   });

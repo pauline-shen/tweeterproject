@@ -47,6 +47,7 @@
     </span>
   </nav>
 
+  <!-- profile section -->
   <header class="aligner">
     <div class="aligneritem">
       <img src="/images/profile-hex.png">
@@ -58,15 +59,16 @@
 
   <!-- Page-specific (main) content here -->
   <main class="container">
+    <!-- section for submitting new tweet -->
     <section class="new-tweet">
       <h2>Compose Tweet</h2>
       <form id="tweet-form" action="/tweets" method="POST">
-        <div class="errorMsg" id="errorEmpty">
+        <div class="errorMsg" id="errorEmpty"> <!-- error msg -->
           <i class="fa-solid fa-triangle-exclamation"></i>
           You submitted an empty tweet.
           <i class="fa-solid fa-triangle-exclamation"></i>
         </div>
-        <div class="errorMsg" id="errorLong">
+        <div class="errorMsg" id="errorLong"> <!-- error msg -->
           <i class="fa-solid fa-triangle-exclamation"></i>
           Your tweet is too long. Please limit the length to 140 chars.
           <i class="fa-solid fa-triangle-exclamation"></i>

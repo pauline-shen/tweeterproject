@@ -113,9 +113,3 @@ article.tweet footer {
 .iconoption:hover {
   color: #c2b23a
 }
-
-.profile {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
