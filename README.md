@@ -12,6 +12,14 @@ This repository is the starter code for the project: Students will fork and clon
 3. Start the web server using the `npm start` command. The app will be served at <http://localhost:8080/>.
 4. Go to <http://localhost:8080/> in your browser.
 
+## Final Product
+
+User can compose a tweet of 140 characters or less, but the tweet cannot be empty. Responsive design is added for different screen sizes. Please see the image below: 
+!["Desktop view"](https://github.com/pauline-shen/tinyapp/blob/master/docs/urls.png?raw=true)
+Desktop View
+!["Tablet view"](https://github.com/pauline-shen/tinyapp/blob/master/docs/create.png?raw=true)
+Tablet View
+
 ## Dependencies
 
 - Express
