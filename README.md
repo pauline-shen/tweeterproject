@@ -15,9 +15,9 @@ This repository is the starter code for the project: Students will fork and clon
 ## Final Product
 
 User can compose a tweet of 140 characters or less, but the tweet cannot be empty. Responsive design is added for different screen sizes. Please see the image below: 
-!["Desktop view"](https://github.com/pauline-shen/tinyapp/blob/master/docs/urls.png?raw=true)
+!["Desktop view"](https://github.com/pauline-shen/tweeterproject/blob/master/docs/desktop.png)
 Desktop View
-!["Tablet view"](https://github.com/pauline-shen/tinyapp/blob/master/docs/create.png?raw=true)
+!["Tablet view"](https://github.com/pauline-shen/tweeterproject/blob/master/docs/tablet.png)
 Tablet View
 
 ## Dependencies
